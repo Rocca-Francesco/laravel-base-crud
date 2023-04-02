@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('author', 20)->nullable();
             $table->string('editor', 20)->nullable();
             $table->time('length');
-            $table->string('poster', 50)->nullable();
+            $table->text('poster', 50)->nullable();
             $table->timestamps();
         });
     }
