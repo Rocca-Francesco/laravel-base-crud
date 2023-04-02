@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 20);
+            $table->string('album', 20);
+            $table->string('author', 20)->nullable();
+            $table->string('editor', 20)->nullable();
+            $table->time('length');
+            $table->string('poster', 50)->nullable();
             $table->timestamps();
         });
     }
