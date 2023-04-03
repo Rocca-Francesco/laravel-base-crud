@@ -45,9 +45,11 @@ class TracksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(Track $id)
+    {   
+        // $track = Track::find($id);
+        dd($id);
+        return view('Tracks.TrackDetail', compact('track'));
     }
 
     /**

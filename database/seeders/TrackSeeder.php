@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Track;
+use Faker\Generator as Faker;
 
 class TrackSeeder extends Seeder
 {
@@ -13,15 +14,17 @@ class TrackSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        $new_track = new Track;
-        $new_track->title = 'Numb';
-        $new_track->album = 'Meteora';
-        $new_track->author = 'Linkin Park';
-        $new_track->editor = 'Warner Records';
-        $new_track->length = '03:05:03';
-        $new_track->poster = 'https://images.genius.com/96b71b235c8bd246a46d75deba3ac149.1000x960x1.jpg';
-        $new_track->save();
+        for ($i=0; $i < 50; $i++) { 
+            $new_track = new Track;
+            $new_track->title = $faker->words(3, true);
+            $new_track->album = $faker->words(3, true);
+            $new_track->author = $faker->firstName($gender = 'male'|'female');
+            $new_track->editor = $faker->words(3, true);
+            $new_track->length = $faker->time();
+            $new_track->poster = 'https://picsum.photos/200/300?random';
+            $new_track->save();
+        }
     }
 }

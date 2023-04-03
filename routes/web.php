@@ -20,3 +20,5 @@ Route::get('/', function() {
 
 
 Route::get('/Tracks', [TracksController::class, 'index'])->name('allTracks');
+
+Route::get('/TrackDetail/{track}', [TracksController::class, 'show'])->name('TrackDetail');
