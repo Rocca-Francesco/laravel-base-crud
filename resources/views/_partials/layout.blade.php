@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  @include('_partials.navbar')
   <div class="container">
     @yield('contentPage')
   </div>
