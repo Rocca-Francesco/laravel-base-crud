@@ -1,9 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 
-.jumbotron {
-    min-height: 100vh;
+body {
+    color: whitesmoke;
+    height: 100vh;
+    background-color: #41464b;
 }
 
-img {
-    max-height: 150px;
+.card {
+    width: 18rem;
+    background-color: rgb(33, 37, 41);
 }

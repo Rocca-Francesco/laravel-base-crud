@@ -16,7 +16,7 @@ use App\Http\Controllers\TracksController;
 
 Route::get('/', function() {
   return view('homepage');
-});
+})->name('homepage');
 
 
-Route::get('/Tracks', [TracksController::class, 'index']);
+Route::get('/Tracks', [TracksController::class, 'index'])->name('allTracks');
