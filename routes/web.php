@@ -14,4 +14,9 @@ use App\Http\Controllers\TracksController;
 |
 */
 
-Route::get('/', [TracksController::class, 'index']);
+Route::get('/', function() {
+  return view('homepage');
+});
+
+
+Route::get('/Tracks', [TracksController::class, 'index']);
