@@ -25,7 +25,7 @@ class TracksController extends Controller
      */
     public function create()
     {
-        //
+        return view('tracks.create');
     }
 
     /**
@@ -36,7 +36,17 @@ class TracksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $data = $request->all();
+        $newTrack = new Track;
+        $newTrack->title = $data['title'];
+        $newTrack->album = $data['album'];
+        $newTrack->author = $data['author'];
+        $newTrack->editor = $data['editor'];
+        $newTrack->length = $data['length'];
+        $newTrack->poster = $data['poster'];
+        $newTrack->save();
+        return redirect()->route('tracks.show', $newTrack->id);
     }
 
     /**

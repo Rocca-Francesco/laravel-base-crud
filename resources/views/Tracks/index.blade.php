@@ -5,6 +5,9 @@
 @endsection
 
 @section('contentPage')
+<div>
+  <a href="{{ route('tracks.create') }}">SALVA UN NUOVO BRANO</a>
+</div>
 <div class="row my-4 justify-content-between">
   @foreach ($tracksList as $track)
   <div class="card g-4">
