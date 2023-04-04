@@ -12,7 +12,7 @@
               <a class="nav-link active text-primary" aria-current="page" href="{{ route('homepage') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-primary" aria-current="page" href="{{ route('allTracks') }}" >All Tracks</a>
+              <a class="nav-link active text-primary" aria-current="page" href="{{ route('tracks.index') }}" >All Tracks</a>
             </li>
           </ul>
         </div>

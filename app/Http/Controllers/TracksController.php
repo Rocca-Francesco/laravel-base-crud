@@ -15,7 +15,7 @@ class TracksController extends Controller
     public function index()
     {
         $tracksList = Track::all();
-        return view('Tracks.AllTracks', compact('tracksList'));
+        return view('tracks.index', compact('tracksList'));
     }
 
     /**
@@ -45,11 +45,10 @@ class TracksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Track $id)
+    public function show($id)
     {   
-        // $track = Track::find($id);
-        dd($id);
-        return view('Tracks.TrackDetail', compact('track'));
+        $track = Track::find($id);
+        return view('tracks.show', compact('track'));
     }
 
     /**

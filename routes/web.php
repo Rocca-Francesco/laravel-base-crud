@@ -19,6 +19,4 @@ Route::get('/', function() {
 })->name('homepage');
 
 
-Route::get('/Tracks', [TracksController::class, 'index'])->name('allTracks');
-
-Route::get('/TrackDetail/{track}', [TracksController::class, 'show'])->name('TrackDetail');
+Route::resource('/tracks', TracksController::class);
