@@ -18,7 +18,17 @@
         <span>{{ $track->author }}</span>
       </div>
     </a>
+
+    {{-- modifica --}}
     <a href=" {{ route('tracks.edit', $track) }} ">Modifica dettagli canzone</a>
+
+    {{-- elimina --}}
+    <form action="{{ route('tracks.destroy', $track) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    
+    <button type="submit" class="text-danger">Elimina dettagli canzone</button>
+    </form>
   </div>
   @endforeach
 </div>
