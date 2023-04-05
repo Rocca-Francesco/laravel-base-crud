@@ -13,6 +13,6 @@
     <span>Album: {{ $track->album }}</span>
     <span>Author: {{ $track->author }}</span>
     <span>Editor: {{ $track->editor }}</span>
-    <span>Lengtth: {{ $track->length }}</span>
+    <span>Length: {{ $track->length }}</span>
   </div>
 @endsection

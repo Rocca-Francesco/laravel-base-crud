@@ -67,9 +67,9 @@ class TracksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Track $track)
     {
-        //
+        return view('tracks.edit', compact('track'));
     }
 
     /**
@@ -79,9 +79,18 @@ class TracksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Track $track)
     {
-        //
+        $data = $request->all();
+        $track->title = $data['title'];
+        $track->album = $data['album'];
+        $track->author = $data['author'];
+        $track->editor = $data['editor'];
+        $track->length = $data['length'];
+        $track->poster = $data['poster'];
+        $track->update();
+        
+        return redirect()->route('tracks.show', compact('track'));
     }
 
     /**

@@ -18,6 +18,7 @@
         <span>{{ $track->author }}</span>
       </div>
     </a>
+    <a href=" {{ route('tracks.edit', $track) }} ">Modifica dettagli canzone</a>
   </div>
   @endforeach
 </div>
