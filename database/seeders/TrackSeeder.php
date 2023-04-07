@@ -23,7 +23,6 @@ class TrackSeeder extends Seeder
             $new_track->author = $faker->firstName($gender = 'male'|'female');
             $new_track->editor = $faker->words(3, true);
             $new_track->length = $faker->time();
-            $new_track->poster = 'https://picsum.photos/200/300?random';
             $new_track->save();
         }
     }
